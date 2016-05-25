@@ -31,7 +31,6 @@ timestamp=$(date +%s)
 outfile="vic_install_logs_$timestamp.tar"
 logs=$(find . -type f \( -name "install-*.tar.gz" \) )
 if [ -n "${logs}" ]; then
-  ls -al
   for f in ${logs}; do
     if [ -s "$f" ]; then
       tar --append $f -f $outfile
@@ -59,9 +58,6 @@ echo "[GSUtil]" >> ~/.boto
 echo "content_language = en" >> ~/.boto
 echo "default_project_id = $GS_PROJECT_ID" >> ~/.boto
 set -x
-
-gsutil ls gs://vic-ci-logs
-ls -al
 
 if [ -f "$outfile" ]; then
   gsutil cp $outfile gs://vic-ci-logs

@@ -14,19 +14,19 @@ build:
     commands:
       - make all
 
-  test:
-    image: golang:1.6.2
-    pull: true
-    environment:
-      BIN: bin
-      GOPATH: /drone
-      SHELL: /bin/bash
-      DOCKER_API_VERSION: "1.21"
-      VIC_ESX_TEST_URL: $$VIC_ESX_TEST_URL
-    commands:
-      - make test
-    when:
-      success: true
+#  test:
+#    image: golang:1.6.2
+#    pull: true
+#    environment:
+#      BIN: bin
+#      GOPATH: /drone
+#      SHELL: /bin/bash
+#      DOCKER_API_VERSION: "1.21"
+#      VIC_ESX_TEST_URL: $$VIC_ESX_TEST_URL
+#    commands:
+#      - make test
+#    when:
+#      success: true
 
   integration-test:
     image: golang:1.6.2
