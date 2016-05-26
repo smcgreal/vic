@@ -46,15 +46,15 @@ teardown() {
         installer_output=""
     fi
 
-#    if [ -n "$(govc vm.info $vch_name)" ] ; then
-#        govc vm.destroy $vch_name
-#        govc pool.destroy "$GOVC_RESOURCE_POOL/$vch_name"
-#        govc datastore.rm -f $vch_name
-#        govc datastore.rm -f VIC
-#        if govc host.vswitch.info | grep Name: | grep -q $vch_name ; then
-#            govc host.vswitch.remove $vch_name
-#        fi
-#    fi
+    if [ -n "$(govc vm.info $vch_name)" ] ; then
+        govc vm.destroy $vch_name
+        govc pool.destroy "$GOVC_RESOURCE_POOL/$vch_name"
+        govc datastore.rm -f $vch_name
+        govc datastore.rm -f VIC
+        if govc host.vswitch.info | grep Name: | grep -q $vch_name ; then
+            govc host.vswitch.remove $vch_name
+        fi
+    fi
 
     rm -f ./$vch_name-*.pem
 }
