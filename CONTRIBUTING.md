@@ -116,9 +116,8 @@ PRs must pass unit tests and integration tests before being merged into `master`
 You can run the tests locally before making a PR or view the Drone build results for [unit tests][dronevic]
 and [integration tests][e2edronevic].
 
-If you don't have a running ESX required for tests and you can leverage the automated Drone servers for
-running tests while developing. Add `WIP` (work in progress) to the PR title to alert reviewers that
-the PR is not ready to be merged.
+If you don't have a running ESX required for tests, you can leverage the automated Drone servers for
+running tests. Add `WIP` (work in progress) to the PR title to alert reviewers that the PR is not ready to be merged.
 
 
 ### Testing locally
