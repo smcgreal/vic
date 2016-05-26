@@ -37,7 +37,7 @@ This is a rough outline of what a contributor's workflow looks like:
 - Make commits of logical units.
 - Make sure your commit messages are in the proper format (see below).
 - Push your changes to a topic branch in your fork of the repository.
-- Test your changes as detailed in the [Automated Testing](#Automated Testing) section.
+- Test your changes as detailed in the [Automated Testing](#automated-testing) section.
 - Submit a pull request to vmware/vic.
 - Your PR must receive at least one LGTM from a maintainer before merging.
 
