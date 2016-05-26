@@ -6,8 +6,7 @@ Library  requests
 Library  Process
 
 *** Variables ***
-${esxi}  192.168.254.128
-${install}  vic-machine -target=${esxi} -user=root -image-store=datastore1 -appliance-iso=/src/github.com/vmware/vic/bin/appliance.iso -bootstrap-iso=/src/github.com/vmware/vic/bin/bootstrap.iso -generate-cert=true -passwd=vmware1 -force=true -bridge-network=network -compute-resource=/ha-datacenter/host/localhost.localdomain/Resources
+${install}  vic-machine -target=%{ESX_URL} -user=%{ESX_USERNAME} -image-store=datastore1 -appliance-iso=/src/github.com/vmware/vic/bin/appliance.iso -bootstrap-iso=/src/github.com/vmware/vic/bin/bootstrap.iso -generate-cert=true -passwd=%{ESX_PASSWORD} -force=true -bridge-network=network -compute-resource=/ha-datacenter/host/localhost.localdomain/Resources
 
 *** Keywords ***
 Install VIC Appliance To ESXi Server
