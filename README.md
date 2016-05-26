@@ -120,12 +120,12 @@ The iso image will be created in `$BIN`
 
 ## Building with CI
 
-Merges to this repository will trigger builds with [Drone][dronevic].
+Merges to this repository will trigger builds on our [Drone CI][dronevic].
 
 To build locally with Drone:
 
 Ensure that you have Docker 1.6 or higher installed.
-Install the Drone command line tools.
+Install the [Drone command line tools][dronecli].
 From the root directory of the `vic` repository run `drone exec -trusted -cache -e VIC_ESX_TEST_URL=""`
 
 ## Starting docker-engine-server
@@ -148,7 +148,7 @@ bin/docker-engine-server -serveraddr IP --port=2376 -port-layer-addr IP -port-la
 sudo bin/port-layer-server --host=IP --port=8080 --insecure --sdk="https://USERNAME:PASSWORD@IP/sdk --datacenter=DATACENTER --cluster=CLUSTER --datastore=DATASTORE --network=NETWORK --vch=VCH_NAME"
 ```
 
-## Testing with docker client
+## Using VIC with docker client
 
 Download docker client
 ```
