@@ -7,27 +7,7 @@
 #
 # docker build -t vic-integration-test --no-cache -f Dockerfile.vic-integration-test .
 
-from ubuntu
-
-# Make sure image is up to date and required libraries are installed
-run apt-get update
-run apt-get -y upgrade
-run apt-get -y install python-pip
-run apt-get -y install wget
-run apt-get -y install git
-run apt-get -y install build-essential
-run apt-get -y install docker.io
-run apt-get -y install iputils-ping
-run pip install --upgrade pip
-run pip install robotframework
-run pip install requests
-
-# Install version 1.6.2 of golang
-run wget https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
-run tar xvf go1.6.2.linux-amd64.tar.gz
-run mv go /usr/local/
-env PATH $PATH:/usr/local/go/bin
-env GOPATH /
+from vic-integration-test-base
 
 # Install latest version of vmware-vic
 run go get github.com/vmware/vic; echo 0
