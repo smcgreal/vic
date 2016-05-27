@@ -5,12 +5,13 @@
 # (http://robotframework.org/)
 # (https://github.com/vmware/vic)
 #
-# docker build -t vic-integration-test --no-cache - < Dockerfile.vic-integration-test
+# docker build -t vic-integration-test --no-cache -f Dockerfile.vic-integration-test .
 
 from ubuntu
 
 # Make sure image is up to date and required libraries are installed
 run apt-get update
+run apt-get -y upgrade
 run apt-get -y install python-pip
 run apt-get -y install wget
 run apt-get -y install git
